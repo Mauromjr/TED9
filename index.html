@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejador de estudos | TED 9</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="painel">
+        <header class="cabecalho">
+            <div>
+                <p class="identificacao">TED 9 · JavaScript</p>
+                <h1>Planejador de estudos</h1>
+                <p>Organize as atividades que você quer estudar hoje.</p>
+            </div>
+            <div class="horario">
+                <time id="relogio"></time>
+                <span id="periodo"></span>
+            </div>
+        </header>
+
+        <div class="colunas">
+            <section class="cartao" aria-labelledby="titulo-formulario">
+                <h2 id="titulo-formulario">Nova atividade</h2>
+                <form id="formulario" novalidate>
+                    <label for="assunto">Assunto</label>
+                    <input id="assunto" type="text" placeholder="Ex.: Seletores do DOM" maxlength="80" required>
+
+                    <label for="duracao">Duração em minutos</label>
+                    <input id="duracao" type="number" placeholder="Ex.: 30" min="1" max="720" step="1" required>
+
+                    <fieldset>
+                        <legend>Tipo de estudo</legend>
+                        <div class="opcoes">
+                            <label><input type="radio" name="tipo" value="Leitura" checked> Leitura</label>
+                            <label><input type="radio" name="tipo" value="Prática"> Prática</label>
+                            <label><input type="radio" name="tipo" value="Revisão"> Revisão</label>
+                        </div>
+                    </fieldset>
+
+                    <p id="erro" class="erro" role="alert" hidden></p>
+                    <button class="adicionar" type="submit">Adicionar atividade</button>
+                </form>
+            </section>
+
+            <section class="cartao" aria-labelledby="titulo-roteiro">
+                <div class="cabecalho-roteiro">
+                    <h2 id="titulo-roteiro">Seu roteiro</h2>
+                    <span id="total" role="status">0 min no total</span>
+                </div>
+                <p id="lista-vazia">As atividades adicionadas vão aparecer aqui.</p>
+                <ul id="atividades"></ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
